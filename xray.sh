@@ -1,4 +1,4 @@
-DEFAULT_START_PORT=16425                         #默认起始端口
+DEFAULT_START_PORT=30000                         #默认起始端口
 DEFAULT_SOCKS_USERNAME="123"                   #默认socks账号
 DEFAULT_SOCKS_PASSWORD="123"               #默认socks密码
 DEFAULT_WS_PATH="/ws"                            #默认ws路径
