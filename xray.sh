@@ -1,4 +1,4 @@
-DEFAULT_START_PORT=30000                         #默认起始端口
+DEFAULT_START_PORT=16425                         #默认起始端口
 DEFAULT_SOCKS_USERNAME="123"                   #默认socks账号
 DEFAULT_SOCKS_PASSWORD="123"               #默认socks密码
 DEFAULT_WS_PATH="/ws"                            #默认ws路径
@@ -103,18 +103,7 @@ config_xray() {
 }
 main() {
 	[ -x "$(command -v xrayL)" ] || install_xray
-	if [ $# -eq 1 ]; then
-		config_type="$1"
-	else
-		read -p "选择生成的节点类型 (socks/vmess): " config_type
-	fi
-	if [ "$config_type" == "vmess" ]; then
-		config_xray "vmess"
-	elif [ "$config_type" == "socks" ]; then
+	
 		config_xray "socks"
-	else
-		echo "未正确选择类型，使用默认sokcs配置."
-		config_xray "socks"
-	fi
 }
 main "$@"
